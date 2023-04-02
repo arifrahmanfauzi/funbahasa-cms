@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/login',[\App\Http\Controllers\Auth\LoginController::class,'index']);
+Route::get('/register',[\App\Http\Controllers\Auth\RegisterController::class,'index']);
+Route::get('/tentang-kami',[\App\Http\Controllers\NavigationController::class,'about']);
+Route::get('/unggah-karya',[\App\Http\Controllers\NavigationController::class,'uploadScript']);
+Route::get('/event',[\App\Http\Controllers\NavigationController::class,'event']);
+Route::get('/baca-karya',[\App\Http\Controllers\NavigationController::class,'readScript']);
+
