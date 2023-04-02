@@ -20,8 +20,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login',[LoginController::class,'index']);
+Route::get('/login',[LoginController::class,'index'])->name('c_login');
 Route::get('/register',[RegisterController::class,'index']);
+Route::post('/register',[RegisterController::class,'register'])->name('c_register');
 Route::get('/tentang-kami',[NavigationController::class,'about']);
 Route::get('/unggah-karya',[NavigationController::class,'uploadScript']);
 Route::get('/event',[NavigationController::class,'event']);

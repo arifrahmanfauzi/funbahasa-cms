@@ -50,8 +50,8 @@
             </p>
         </div>
 
-        <form action="" class="mx-auto mt-6 mb-0 max-w-md space-y-4 ">
-
+        <form action="{{route('c_register')}}" class="mx-auto mt-6 mb-0 max-w-md space-y-4" method="POST">
+            @csrf
             <div>
                 <label for="first-name" class="sr-only block mb-2 text-sm font-medium text-gray-500 dark:text-white">nama-depan</label>
                 <input type="text" name="first-name" id="first-name" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="nama depan" required>
@@ -74,7 +74,7 @@
 
             <div>
                 <label for="confirm-password" class="sr-only block mb-2 text-sm font-medium text-gray-500 dark:text-white">konfirmasi-kata-sandi</label>
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="konfirmasi kata sandi" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                <input type="password" name="password_confirmation " id="confirm-password" placeholder="konfirmasi kata sandi" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
             </div>
 
             <div class="flex justify-between">
