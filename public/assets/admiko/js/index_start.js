@@ -231,7 +231,7 @@ function dragDrop() {
 }
 
 function updateOrder() {
-    var data_array = new Array();
+    var data_array = [];
     $('.dragMe').each(function () {
         data_array.push($(this).data('id'));
     });

@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Admins\Admins;
+use Mail;
 use Str;
 
 class ForgotPasswordController extends Controller
@@ -28,7 +29,7 @@ class ForgotPasswordController extends Controller
             $data['reset_token'] = $reset_token;
             $Admins->find($email->id)->update($data);
             $data['email'] = $email->email;
-            \Mail::to($email->email)->send(new \App\Http\Controllers\Admin\Auth\EmailResetLink($data));
+            Mail::to($email->email)->send(new EmailResetLink($data));
             return redirect()->back()->with('message_sent', trans('admiko.reset_email_send_success'));
         } else {
             return redirect()->back()->withInput()->with('error', trans('admiko.reset_email_send_fail'));
