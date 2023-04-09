@@ -49,7 +49,8 @@
             </p>
         </div>
 
-        <form action="{{route('c_login')}}" class="mx-auto mt-6 mb-0 max-w-md space-y-4" method="POST">
+        <form action="{{route('c_login')}}" method="POST" class="mx-auto mt-6 mb-0 max-w-md space-y-4">
+            @csrf
             <div>
                 <label for="email" class="sr-only block mb-2 text-sm font-medium text-gray-500 dark:text-white">alamat-email</label>
                 <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="email" required>
@@ -63,7 +64,7 @@
             <div class="flex justify-between">
                 <div class="flex items-start mt-3">
                     <div class="flex items-center h-5">
-                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800">
                     </div>
                     <label for="remember" class="font-sans ml-2 text-xs font-semibold text-gray-500 dark:text-gray-300">Ingat saya</label>
                 </div>

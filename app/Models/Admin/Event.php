@@ -17,8 +17,8 @@ class Event extends Model
     use AdmikoFileUploadTrait;
 
     public $table = 'event';
-    
-    
+
+
 	static $admiko_file_info = [
 		"poster_image"=>[
 			"original"=>["action"=>"resize","width"=>1920,"height"=>1080,"folder"=>"upload/"]
@@ -43,6 +43,7 @@ class Event extends Model
 		"start_date",
 		"end_date",
 		"tag",
+        "status",
     ];
     public function setPosterImageAttribute()
     {

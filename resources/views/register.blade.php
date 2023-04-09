@@ -48,6 +48,18 @@
             <p class="font-sans mt-1 text-gray-500">
                 Buat akun baru untuk melanjutkan
             </p>
+            @if($errors)
+                @foreach($errors->all() as $message)
+                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                        <span class="font-medium">Oops!</span> {{$message}}.
+                    </div>
+                @endforeach
+            @endif
+            @if(session('success'))
+                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                    <span class="font-medium">{{ session('success') }}</span>
+                </div>
+            @endif
         </div>
 
         <form action="{{route('c_register')}}" class="mx-auto mt-6 mb-0 max-w-md space-y-4" method="POST">
@@ -74,15 +86,15 @@
 
             <div>
                 <label for="confirm-password" class="sr-only block mb-2 text-sm font-medium text-gray-500 dark:text-white">konfirmasi-kata-sandi</label>
-                <input type="password" name="password_confirmation " id="confirm-password" placeholder="konfirmasi kata sandi" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                <input type="password" name="password_confirmation" id="confirm-password" placeholder="konfirmasi kata sandi" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
             </div>
 
             <div class="flex justify-between">
                 <div class="flex items-start mt-3">
                     <div class="flex items-center h-5">
-                        <input id="statement-remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                        <input id="agree" type="checkbox" name="agree" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
                     </div>
-                    <label for="" class="font-sans ml-2 text-xs font-medium text-gray-500 dark:text-gray-300">
+                    <label for="agree" class="font-sans ml-2 text-xs font-medium text-gray-500 dark:text-gray-300">
                         Dengan mendaftar, Anda menyetujui Persyaratan penggunaan dan kebijakan privasi
                     </label>
                 </div>

@@ -31,8 +31,13 @@
                        class="block mr-10 my-auto font-bold font-title text-gray-500 hover:text-blue-500">Event</a>
                     <a href="{{url('/baca-karya')}}"
                        class="block mr-10 my-auto font-bold font-title text-gray-500 hover:text-blue-500">Baca Karya</a>
+                    @guest
                     <a href="{{url('/login')}}"
                        class="px-5 py-1 ml-3 font-bold font-title text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400">Masuk</a>
+                    @else
+                        <a href="{{url('/profile')}}"
+                           class="px-5 py-1 ml-3 font-bold font-title text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400">{{auth()->user()->name}}</a>
+                    @endguest
                 </nav>
             </div>
             <!--* Nav Menu Item End -->
@@ -159,11 +164,13 @@
 
         <!--* Event  -->
         <section>
+            @empty($event)
+            @endempty
             <div class="flex flex-col md:flex-row lg:flex-row w-full my-20 xl:my-32 sm:my-24 px-10 xl:px-36 sm:px-36 md:px-16 lg:px-32">
                 <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 bg-transparent">
                     <div class="grid grid-cols-2 xl:grid-cols-3 gap-7 sm:mr-0 md:mr-10 lg:mr-16 xl:mr-10">
                         <div class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                            <a href="#">
+                            <a href="{{$event->register_link}}" target="_blank">
                                 <div>
                                     <img src="{{asset('assets/img/sec-3 pendaftaran.svg')}}" class="display block ml-3 w-7 xl:w-11 sm:w-8 md:w-8 lg:w-9 pb-3">
                                     <p class="font-bold font-title ml-3 xl:text-xl sm:text-lg">Pendaftaran</p>
@@ -172,7 +179,7 @@
                             </a>
                         </div>
                         <div class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                            <a href="#">
+                            <a href="{{$event->guide_link}}" target="_blank">
                                 <div>
                                     <img src="{{asset('assets/img/sec-3 panduan.svg')}}" class="display block ml-3 w-7 xl:w-11 sm:w-8 md:w-8 lg:w-9 pb-3">
                                     <p class="font-bold font-title ml-3 xl:text-xl sm:text-lg">Panduan</p>
@@ -181,7 +188,7 @@
                             </a>
                         </div>
                         <div class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                            <a href="#">
+                            <a href="{{$event->upload_link}}" target="_blank">
                                 <div>
                                     <img src="{{asset('assets/img/sec-3 unggah.svg')}}" class="display block ml-3 h-10 xl:h-14 sm:h-11 md:h-11 lg:h-12 pb-3">
                                     <p class="font-bold font-title ml-3 xl:text-xl sm:text-lg">Unggah</p>
@@ -190,7 +197,7 @@
                             </a>
                         </div>
                         <div class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                            <a href="#">
+                            <a href="{{$event->poster_link}}" target="_blank">
                                 <div>
                                     <img src="{{asset('assets/img/sec-3 poster.svg')}}" class="display block ml-3 w-7 xl:w-10 sm:w-8 md:w-8 lg:w-8 pb-3">
                                     <p class="font-bold font-title ml-3 xl:text-xl sm:text-lg">Poster</p>
@@ -209,7 +216,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 lg:w-1/2 h-screen sm:h-screen md:h-auto lg:h-auto xl:h-auto border shadow-lg bg-white rounded-xl ">
+                <div class="w-full md:w-1/2 lg:w-1/2 h-screen sm:h-screen md:h-auto lg:h-auto xl:h-auto border shadow-lg bg-white rounded-xl xl:bg-cover xl:bg-no-repeat xl:bg-center" style="background-image: url('{{ Storage::disk(config("admiko_config.filesystem"))->url($admiko_data['fileInfo']["poster_image"]['original']["folder"].$event->poster_image) }}');">
                     <div class="text-center">
 
 

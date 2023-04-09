@@ -24,7 +24,7 @@
         <div class="card-body">
             @if ($errors->any())<div class="row"><div class="col-2"></div><div class="col"><div class="invalid-feedback d-block">@foreach($errors->all() as $error) {{$error}}<br> @endforeach</div></div></div>@endif
             <div class="row">
-                
+
                 <div class=" col-12">
                     <div class="form-group row">
                         <label for="event_name" class="col-md-2 col-form-label">Event Name:</label>
@@ -109,7 +109,7 @@
                 </div>
                 <div class=" col-12">
                     <div class="form-group row">
-                        <label for="annouchement_link" class="col-md-2 col-form-label">Annouchement Link:</label>
+                        <label for="annouchement_link" class="col-md-2 col-form-label">Announcement Link:</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" id="annouchement_link" name="annouchement_link"  placeholder="Annouchement Link"  value="{{{ old('annouchement_link', isset($data)?$data->annouchement_link : '') }}}">
                             <div class="invalid-feedback @if ($errors->has('annouchement_link')) d-block @endif">{{trans('admiko.required_text')}}</div>
@@ -170,7 +170,20 @@
                         </div>
                     </div>
                 </div>
-
+                <div class=" col-12">
+                    <div class="form-group row">
+                        <label for="status" class="col-md-2 col-form-label">Status:</label>
+                        <div class="col-md-10">
+                            <div class="form-check form-checkbox">
+                                <input type="hidden" name="status" value="0">
+                                <input class="form-check-input" type="checkbox" id="status" name="status" value="1"
+                                       @if(old("status") || ((isset($data)&&$data->status=="1")) || !isset($data)) checked @endif >
+                                <label class="form-check-label" for="status"></label>
+                            </div>
+                            <small id="status_help" class="text-muted m-0">Active</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card-footer form-actions" id="form-group-buttons">

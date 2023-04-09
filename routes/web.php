@@ -16,11 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/login',[LoginController::class,'index'])->name('c_login');
+Route::get('/', [NavigationController::class,'index']);
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/c_login',[LoginController::class,'login'])->name('c_login');
+Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/register',[RegisterController::class,'index']);
 Route::post('/register',[RegisterController::class,'register'])->name('c_register');
 Route::get('/tentang-kami',[NavigationController::class,'about']);
