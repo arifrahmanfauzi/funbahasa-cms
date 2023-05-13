@@ -25,13 +25,13 @@
                    class="block mr-10 my-auto font-bold font-title text-gray-500 hover:text-blue-500">Event</a>
                 <a href="{{url('/baca-karya')}}"
                    class="block mr-10 my-auto font-bold font-title text-gray-500 hover:text-blue-500">Baca Karya</a>
-                @guest
-                    <a href="{{url('/login')}}"
-                       class="px-5 py-1 ml-3 font-bold font-title text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400">Masuk</a>
-                @else
-                    <a href="{{url('/profile')}}"
-                       class="px-5 py-1 ml-3 font-bold font-title text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400">{{auth()->user()->name}}</a>
-                @endguest
+{{--                @guest--}}
+{{--                    <a href="{{url('/login')}}"--}}
+{{--                       class="px-5 py-1 ml-3 font-bold font-title text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400">Masuk</a>--}}
+{{--                @else--}}
+{{--                    <a href="{{url('/profile')}}"--}}
+{{--                       class="px-5 py-1 ml-3 font-bold font-title text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400">{{auth()->user()->name}}</a>--}}
+{{--                @endguest--}}
             </nav>
         </div>
         <!--* Nav Menu Item End -->
@@ -72,13 +72,13 @@
                         </div>
                     </a>
 
-                    <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                        <div class="flex ml-2 bg-blue-500 rounded-lg -ml-2 -mr-2 h-10">
-                            <a href="login.html" class="pl-4 mt-2 text-base font-medium text-white" style="font-family: 'Poppins', sans-serif;">
-                                Masuk
-                            </a>
-                        </div>
-                    </a>
+{{--                    <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">--}}
+{{--                        <div class="flex ml-2 bg-blue-500 rounded-lg -ml-2 -mr-2 h-10">--}}
+{{--                            <a href="login.html" class="pl-4 mt-2 text-base font-medium text-white" style="font-family: 'Poppins', sans-serif;">--}}
+{{--                                Masuk--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
                 </div>
             </div>
         </div>

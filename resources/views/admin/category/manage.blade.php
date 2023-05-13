@@ -24,7 +24,7 @@
         <div class="card-body">
             @if ($errors->any())<div class="row"><div class="col-2"></div><div class="col"><div class="invalid-feedback d-block">@foreach($errors->all() as $error) {{$error}}<br> @endforeach</div></div></div>@endif
             <div class="row">
-                
+
                 <div class=" col-12">
                     <div class="form-group row">
                         <label for="category_name" class="col-md-2 col-form-label">Category Name:</label>

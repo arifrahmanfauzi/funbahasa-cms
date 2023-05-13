@@ -35,6 +35,7 @@
                         <tr data-sort-method='thead'>
 							<th scope="col" class="w-5" data-sort-method="number" >ID</th>
 							<th scope="col" class="text-nowrap">Category Name</th>
+							<th scope="col" class="text-nowrap">Status</th>
                             <th scope="col" class="w-5 no-sort" data-orderable="false">{{trans("admiko.table_edit")}}</th>
                             @if(Gate::allows('category_allow'))
                             <th scope="col" class="w-5 no-sort" data-orderable="false">{{trans('admiko.table_delete')}}</th>
@@ -46,6 +47,7 @@
                         <tr>
 							<td class="w-5"><a href="{{route("admin.category.edit",[$data->id])}}">{{$data->id}}</a></td>
 							<td class="text-nowrap">{{$data->category_name}}</td>
+							<td class="text-nowrap">{{$data->status}}</td>
                             <td class="w-5 no-sort"><a href="{{route("admin.category.edit",[$data->id])}}"><i class="fas fa-edit fa-fw"></i></a></td>
                             @if(Gate::allows(['category_allow']))
                             <td class="w-5 no-sort">
@@ -91,6 +93,6 @@
         </div>
     </div>
     @endIf
-    
+
 </div>
 @endsection
