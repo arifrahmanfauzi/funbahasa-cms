@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Category;
 use App\Models\Admin\Event;
+use App\Models\Admin\Karya;
 use Illuminate\Http\Request;
 
 class NavigationController extends Controller
@@ -30,5 +32,11 @@ class NavigationController extends Controller
     public function readScript()
     {
         return view('reading');
+    }public function read(Request $request)
+    {
+        $slug = $request->id;
+        $category = Category::where('slug',$slug)->first();
+        $karya = Karya::where('category',$category->id)->paginate(4);
+        return view('read-category',['kategori' => $category, 'karyas' => $karya]);
     }
 }

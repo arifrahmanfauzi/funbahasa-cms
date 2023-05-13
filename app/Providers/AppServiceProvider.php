@@ -25,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Paginator::useBootstrap();
+//        Paginator::useBootstrap();
+        Paginator::useTailwind();
         Validator::extend('file_extension', function ($attribute, $value, $parameters, $validator) {
             $extension = $value->getClientOriginalExtension();
             return $extension != '' && in_array($extension, $parameters);

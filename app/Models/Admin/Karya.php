@@ -17,8 +17,8 @@ class Karya extends Model
     use AdmikoFileUploadTrait;
 
     public $table = 'karya';
-    
-    
+
+
 	static $admiko_file_info = [
 		"cover_image"=>[
 			"original"=>["action"=>"resize","width"=>1920,"height"=>1080,"folder"=>"upload/"]
@@ -50,6 +50,9 @@ class Karya extends Model
     public function category_id()
     {
         return $this->belongsTo(Category::class, 'category');
+    }
+    public function category_slug(){
+        return $this->belongsTo(Category::class,'slug');
     }
 	public function tag_id()
     {

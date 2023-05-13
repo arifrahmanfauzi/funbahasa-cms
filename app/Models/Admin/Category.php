@@ -8,14 +8,15 @@
 namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Traits\Admin\AdmikoFileUploadTrait;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
     use AdmikoFileUploadTrait;
 
     public $table = 'category';
-    
-    
+
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -24,7 +25,13 @@ class Category extends Model
 
     protected $fillable = [
 		"category_name",
+        'slug',
 		"status",
     ];
-    
+
+    public function karya(): HasMany
+    {
+        return $this->hasMany(Karya::class,'category','id');
+    }
+
 }

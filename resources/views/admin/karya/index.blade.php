@@ -36,7 +36,7 @@
 							<th scope="col" class="w-5" data-sort-method="number" >ID</th>
 							<th scope="col" class="text-nowrap">Title</th>
 							<th scope="col" class="d-none d-sm-table-cell">Content</th>
-							<th scope="col" class="text-nowrap d-none d-md-table-cell">Excerpt</th>
+							<th scope="col" class="d-none d-md-table-cell">Excerpt</th>
 							<th scope="col" class="d-none d-lg-table-cell">File</th>
 							<th scope="col" class="text-nowrap d-none d-lg-table-cell">Author</th>
 							<th scope="col" class="text-nowrap d-none d-lg-table-cell">Phone</th>
@@ -53,7 +53,7 @@
 							<td class="w-5"><a href="{{route("admin.karya.edit",[$data->id])}}">{{$data->id}}</a></td>
 							<td class="text-nowrap">{{$data->title}}</td>
 							<td class="d-none d-sm-table-cell">{!!Str::limit(strip_tags($data["content"]), 50, "...")!!}</td>
-							<td class="text-nowrap d-none d-md-table-cell">{{$data->excerpt}}</td>
+							<td class="text-wrap d-none d-md-table-cell">{{$data->excerpt}}</td>
 							<td class="d-none d-lg-table-cell">{{$data->file}}</td>
 							<td class="text-nowrap d-none d-lg-table-cell">{{$data->author}}</td>
 							<td class="text-nowrap d-none d-lg-table-cell">{{$data->phone}}</td>
@@ -103,6 +103,6 @@
         </div>
     </div>
     @endIf
-    
+
 </div>
 @endsection

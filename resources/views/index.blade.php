@@ -413,7 +413,7 @@
                 </div>
                 <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 gap-7">
                     <div class="rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none" style="background-color: #f0f0f0;">
-                        <a href="#">
+                        <a href="{{url('/baca-karya/puisi')}}">
                             <div class="div-cerpen">
                                 <img src="{{asset('assets/img/cerpen.svg')}}" class="display block ml-3 mt-3 w-8 xl:w-9 sm:w-8 md:w-7 lg:w-8 pb-3">
                                 <p class="font-bold font-title ml-3 xl:pb-3 lg:pb-3 md:pb-3 xl:text-base lg:text-base md:text-sm sm:text-base">Cerpen</p>
