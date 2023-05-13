@@ -195,6 +195,7 @@ namespace App\Models\Admin{
  *
  * @property int $id
  * @property string|null $category_name
+ * @property string|null $slug
  * @property string|null $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -206,6 +207,7 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  */
@@ -276,6 +278,7 @@ namespace App\Models\Admin{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \App\Models\Admin\Category|null $category_id
+ * @property-read \App\Models\Admin\Category|null $category_slug
  * @property-write mixed $cover_image_admiko_delete
  * @property-write mixed $file_admiko_delete
  * @property-read \App\Models\Admin\Tags|null $tag_id
