@@ -27,4 +27,5 @@ Route::get('/unggah-karya',[NavigationController::class,'uploadScript']);
 Route::get('/event',[NavigationController::class,'event']);
 Route::get('/baca-karya',[NavigationController::class,'readScript']);
 Route::get('/baca-karya/{id}',[NavigationController::class,'read']);
+Route::get('/{id}',[NavigationController::class,'announcement']);
 

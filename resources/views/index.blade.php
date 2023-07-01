@@ -4,7 +4,7 @@
 @endsection
 @section('body')
     <!--* Navigator Bar -->
-@include('layouts.navbar')
+    @include('layouts.navbar')
     <!--* Navigator Bar End -->
     <!--* Main Content -->
     <main>

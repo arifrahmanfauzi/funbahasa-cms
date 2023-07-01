@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Announcement;
 use App\Models\Admin\Category;
 use App\Models\Admin\Event;
 use App\Models\Admin\Karya;
@@ -32,11 +33,16 @@ class NavigationController extends Controller
     public function readScript()
     {
         return view('reading');
-    }public function read(Request $request)
+    }
+    public function read(Request $request)
     {
         $slug = $request->id;
         $category = Category::where('slug',$slug)->first();
-        $karya = Karya::where('category',$category->id)->paginate(4);
+        $karya = Karya::where('category',$category->id)->latest('created_at')->paginate(4);
         return view('read-category',['kategori' => $category, 'karyas' => $karya]);
+    }
+    public function announcement(Request $request,$id){
+        $announcement = Announcement::where('slug','like',$id)->firstOrFail();
+        return view('announcement',['announcement' => $announcement]);
     }
 }
