@@ -25,18 +25,20 @@ class NavigationController extends Controller
         return view('upload');
     }
 
-    public function event()
+    public function event(Request $request)
     {
-        return view('event');
+        $event = new Event();
+        $events = $event->get();
+        return view('event')->with(['events' => $events]);
     }
 
     public function readScript()
     {
         return view('reading');
     }
-    public function read(Request $request)
+    public function read(Request $request,$id)
     {
-        $slug = $request->id;
+        $slug = $id;
         $category = Category::where('slug',$slug)->first();
         $karya = Karya::where('category',$category->id)->latest('created_at')->paginate(4);
         return view('read-category',['kategori' => $category, 'karyas' => $karya]);
