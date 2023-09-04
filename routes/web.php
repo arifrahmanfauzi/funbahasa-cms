@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\KaryaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\KaryaController as ControllersKaryaController;
 use App\Http\Controllers\NavigationController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [NavigationController::class,'index']);
-Route::get('/login',[LoginController::class,'index']);
-Route::post('/c_login',[LoginController::class,'login'])->name('c_login');
-Route::post('/logout',[LoginController::class,'logout'])->name('logout');
-Route::get('/register',[RegisterController::class,'index']);
-Route::post('/register',[RegisterController::class,'register'])->name('c_register');
-Route::get('/tentang-kami',[NavigationController::class,'about']);
-Route::get('/unggah-karya',[NavigationController::class,'uploadScript']);
-Route::get('/event',[NavigationController::class,'event']);
-Route::get('/baca-karya',[NavigationController::class,'readScript']);
-Route::get('/baca-karya/{id}',[NavigationController::class,'read']);
-Route::get('/{id}',[NavigationController::class,'announcement']);
-
+Route::get('/login', [LoginController::class,'index']);
+Route::post('/c_login', [LoginController::class,'login'])->name('c_login');
+Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+Route::get('/register', [RegisterController::class,'index']);
+Route::post('/register', [RegisterController::class,'register'])->name('c_register');
+Route::get('/tentang-kami', [NavigationController::class,'about']);
+Route::get('/unggah-karya', [NavigationController::class,'uploadScript']);
+Route::post('/unggah-karya', [ControllersKaryaController::class,'uploadKarya']);
+Route::get('/event', [NavigationController::class,'event']);
+Route::get('/baca-karya', [NavigationController::class,'readScript']);
+Route::get('/baca-karya/{id}', [NavigationController::class,'read']);
+Route::get('/{id}', [NavigationController::class,'announcement']);
