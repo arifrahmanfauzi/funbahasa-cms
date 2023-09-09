@@ -117,15 +117,16 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="border shadow-lg bg-grey rounded-xl p-4 mb-7 sm:mb-20 md:mb-0 lg:mb-0 xl:mb-0 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                            <a href="#">
-                                <div>
-                                    <img src="{{asset('assets/img/sec-3 pengumuman.svg')}}" class="display block ml-3 h-10 xl:h-14 sm:h-11 md:h-11 lg:h-12 pb-3">
-                                    <p class="font-bold font-title ml-3 xl:text-xl sm:text-lg">Pengumuman</p>
-                                    <p class="font-regular font-title ml-3 text-xs">Pengumuman Juara #FPPN2020</p>
-                                </div>
-                            </a>
-                        </div>
+                        {{--Pengumuman--}}
+{{--                        <div class="border shadow-lg bg-grey rounded-xl p-4 mb-7 sm:mb-20 md:mb-0 lg:mb-0 xl:mb-0 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">--}}
+{{--                            <a href="#">--}}
+{{--                                <div>--}}
+{{--                                    <img src="{{asset('assets/img/sec-3 pengumuman.svg')}}" class="display block ml-3 h-10 xl:h-14 sm:h-11 md:h-11 lg:h-12 pb-3">--}}
+{{--                                    <p class="font-bold font-title ml-3 xl:text-xl sm:text-lg">Pengumuman</p>--}}
+{{--                                    <p class="font-regular font-title ml-3 text-xs">Pengumuman Juara #FPPN2020</p>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/2 h-screen sm:h-screen md:h-auto lg:h-auto xl:h-auto border shadow-lg bg-white rounded-xl xl:bg-cover xl:bg-no-repeat xl:bg-center" style="background-image: url('{{ Storage::disk(config("admiko_config.filesystem"))->url($admiko_data['fileInfo']["poster_image"]['original']["folder"].$event->poster_image) }}');">
@@ -384,7 +385,7 @@
                 <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 gap-7 mb-10 relative">
                     <img src="{{asset('assets/img/plus-icon.svg')}}" alt="plus" class="plus-icon absolute">
                     <div class="puisi-col1 rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none" style="background-color: #f0f0f0;">
-                        <a href="#">
+                        <a href="{{url('/baca-karya/puisi')}}">
                             <div>
                                 <img src="{{asset('assets/img/puisi.svg')}}" class="display block ml-3 mt-3 xl:w-9 md:w-7 lg:w-8 pb-3">
                                 <p class="font-bold font-title ml-3 xl:text-base lg:text-base md:text-sm">Puisi</p>
@@ -413,7 +414,7 @@
                 </div>
                 <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 gap-7">
                     <div class="rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none" style="background-color: #f0f0f0;">
-                        <a href="{{url('/baca-karya/puisi')}}">
+                        <a href="{{url('/baca-karya/cerpen')}}">
                             <div class="div-cerpen">
                                 <img src="{{asset('assets/img/cerpen.svg')}}" class="display block ml-3 mt-3 w-8 xl:w-9 sm:w-8 md:w-7 lg:w-8 pb-3">
                                 <p class="font-bold font-title ml-3 xl:pb-3 lg:pb-3 md:pb-3 xl:text-base lg:text-base md:text-sm sm:text-base">Cerpen</p>
@@ -421,7 +422,7 @@
                         </a>
                     </div>
                     <div class="rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none" style="background-color: #f0f0f0;">
-                        <a href="#">
+                        <a href="{{url('/baca-karya/cerita-anak')}}">
                             <div class="div-cer-anak">
                                 <img src="{{asset('assets/img/cer-anak.svg')}}" class="display block ml-3 mt-3 w-8 xl:w-9 sm:w-8 md:w-7 lg:w-8 pb-3">
                                 <p class="font-bold font-title ml-3 xl:pb-3 lg:pb-3 md:pb-3 xl:text-base lg:text-base md:text-sm sm:text-base">Cerita Anak</p>
@@ -429,7 +430,7 @@
                         </a>
                     </div>
                     <div class="rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none" style="background-color: #f0f0f0;">
-                        <a href="#">
+                        <a href="{{url('/baca-karya/artikel')}}">
                             <div class="div-artikel">
                                 <img src="{{asset('assets/img/artikel.svg')}}" class="display block ml-3 mt-3 w-8 xl:w-9 sm:w-8 md:w-7 lg:w-8 pb-3">
                                 <p class="font-bold font-title ml-3 xl:pb-3 lg:pb-3 md:pb-3 xl:text-base lg:text-base md:text-sm sm:text-base">Artikel</p>
@@ -437,7 +438,8 @@
                         </a>
                     </div>
                     <div class="rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none" style="background-color: #f0f0f0;">
-                        <a href="#">
+                        <a href="{{url('/baca-karya/esai
+')}}">
                             <div class="div-esai">
                                 <img src="{{asset('assets/img/esai.svg')}}" class="display block ml-3 mt-3 h-11 xl:h-12 sm:h-10 md:h-10 lg:h-11 pb-3">
                                 <p class="font-bold font-title ml-3 xl:pb-3 lg:pb-3 md:pb-3 xl:text-base lg:text-base md:text-sm sm:text-base">Esai</p>

@@ -18,7 +18,7 @@
                     <p class="pb-2 font-extrabold text-2xl xl:text-3xl lg:text-3xl md:text-2xl">Kategori</p>
                     <div class="relative hover:text-blue-500">
                         <img src="{{asset('assets/img/rounded-line-2.svg')}}" alt="rounded-line" class="absolute w-36 sm:w-36 xl:w-44 lg:w-44 md:w-36 -left-4 sm:-left-5 xl:-left-7 lg:-left-7 md:-left-5 -top-3 xl:-top-2 lg:-top-2 md:-top-3 sm:-top-3">
-                        <p class="font-extrabold text-3xl xl:text-4xl lg:text-4xl md:text-3xl">Cerpen</p>
+                        <p class="font-extrabold text-3xl xl:text-4xl lg:text-4xl md:text-3xl">{{\Illuminate\Support\Str::ucfirst($kategori->category_name)}}</p>
                     </div>
                 </a>
             </div>
