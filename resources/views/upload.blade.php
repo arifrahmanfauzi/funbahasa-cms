@@ -137,7 +137,7 @@
                                                             Whatsapp</label>
                                                         <input type="text" name="nomor-hp" id="nomor-hp"
                                                             class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                                                            value="" placeholder="" />
+                                                            value="" placeholder="Contoh: 6287851000000" />
                                                     </div>
                                                 </div>
                                             </div>

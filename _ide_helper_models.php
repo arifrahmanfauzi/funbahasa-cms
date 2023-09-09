@@ -162,6 +162,7 @@ namespace App\Models\Admin{
  *
  * @property int $id
  * @property string|null $name
+ * @property string|null $slug
  * @property string|null $start_date
  * @property string|null $end_date
  * @property string|null $poster
@@ -183,6 +184,7 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Announcement whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Announcement whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Announcement wherePoster($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Announcement whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Announcement whereStartDate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Announcement whereUpdatedAt($value)
  */
@@ -200,6 +202,8 @@ namespace App\Models\Admin{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Admin\Karya> $karya
+ * @property-read int|null $karya_count
  * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Category query()
