@@ -25,7 +25,12 @@
                             {{ $active_event->event_name }}</h3>
                         <span class="text-xs text-yellow-600">Agustus</span>
                         <span class="text-xs text-yellow-600">2023</span>
-                        {{-- {{!! $active_event->description !!}} --}}
+                        <p>
+                            {{ $active_event->excerpt }}
+                        </p>
+                        <button onclick="location.href='{{ $active_event->register_link }}'" title="daftar-event"
+                            type="button" class="bg-blue-500 rounded-md p-2 text-white font-title hover:bg-blue-700">Daftar
+                            Yuk!</button>
                     </div>
                 </a>
             </div>
@@ -42,14 +47,21 @@
                                         {{ $event->event_name }}</h3>
                                     <span class="text-xs text-yellow-600">Agustus</span>
                                     <span class="text-xs text-yellow-600">2023</span>
-                                    {{-- {{ $event->description }} --}}
+                                    <p>
+                                        {{ $event->excerpt }}
+                                    </p>
+                                    <button onclick="location.href='{{ $event->register_link }}'" title="daftar-event"
+                                        type="button"
+                                        class="bg-blue-500 rounded-md p-2 text-white font-title hover:bg-blue-700">Daftar
+                                        Yuk!</button>
                                 </div>
                             </a>
                         </div>
                     @endforeach
                 </div>
-                <div class="w-full py-6 flex justify-end items-center" x-show="pageCount() > 1">
-                    <!--Previous Button-->
+                <div class="w-full py-6 flex justify-end items-center">
+                    {{ $events->links() }}
+                    {{-- <!--Previous Button-->
                     <button x-on:click="prevPage" :disabled="pageNumber == 0"
                         :class="{ 'disabled cursor-not-allowed text-gray-600': pageNumber == 0 }">
                         <svg class="arrow w-7 border-2 rounded-full p-1 cursor-pointer border-gray-500 hover:bg-gray-500 mr-2"
@@ -67,7 +79,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                    </button>
+                    </button> --}}
                 </div>
             </div>
         </section>
@@ -82,120 +94,6 @@
             }
         </style>
 
-        <script>
-            var dataEventNew = [{
-                id: "1",
-                month: "Maret",
-                year: "2023",
-                title: "Festival Cipta Puisi Nasional 2023",
-                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            }, ];
-            var dataEvent = [{
-                    id: "1",
-                    month: "Januari",
-                    year: "2022",
-                    title: "Lomba Menulis Cerpen Nasional 2022",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                },
-                {
-                    id: "2",
-                    month: "Februari",
-                    year: "2022",
-                    title: "Kreasi Puisi Pendek Nasional 2022",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                },
-                {
-                    id: "3",
-                    month: "Maret",
-                    year: "2022",
-                    title: "Festival Cipta Puisi Nasional 2022",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                },
-                {
-                    id: "4",
-                    month: "April",
-                    year: "2022",
-                    title: "Festival Cipta Cerpen Nasional 2022",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                },
-                {
-                    id: "5",
-                    month: "Mei",
-                    year: "2022",
-                    title: "Lomba Menulis Puisi Nasional 2022",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                },
-                {
-                    id: "6",
-                    month: "Juni",
-                    year: "2022",
-                    title: "Festival Puisi Pendek Nasional 2022",
-                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                },
-            ];
-
-
-            function loadEventNew() {
-                return {
-                    search: "",
-                    pageNumber: 0,
-                    size: 1,
-                    total: "",
-                    myForData: dataEventNew,
-
-                    get filteredData() {
-                        const start = this.pageNumber * this.size,
-                            end = start + this.size;
-
-                        if (this.search === "") {
-                            this.total = this.myForData.length;
-                            return this.myForData.slice(start, end);
-                        }
-                    },
-                }
-            }
-
-            function loadEvent() {
-                return {
-                    search: "",
-                    pageNumber: 0,
-                    size: 3,
-                    total: "",
-                    myForData: dataEvent,
-
-                    get filteredData() {
-                        const start = this.pageNumber * this.size,
-                            end = start + this.size;
-
-                        if (this.search === "") {
-                            this.total = this.myForData.length;
-                            return this.myForData.slice(start, end);
-                        }
-                    },
-                    //Create array of all pages (for loop to display page numbers)
-                    pages() {
-                        return Array.from({
-                            length: Math.ceil(this.total / this.size),
-                        });
-                    },
-                    //Next Page
-                    nextPage() {
-                        this.pageNumber++;
-                    },
-                    //Previous Page
-                    prevPage() {
-                        this.pageNumber--;
-                    },
-                    //Total number of pages
-                    pageCount() {
-                        return Math.ceil(this.total / this.size);
-                    },
-                    //Link to navigate to page
-                    viewPage(index) {
-                        this.pageNumber = index;
-                    },
-                }
-            }
-        </script>
+        <script></script>
     </main>
 @endsection

@@ -30,12 +30,14 @@ class NavigationController extends Controller
     {
         $event = new Event();
         $eventActive = $event->whereStatus(1)->first();
-        return view('event', ['active_event' => $eventActive,'events' => $event->whereStatus('!=', 1)->get()]);
+        return view('event', ['active_event' => $eventActive,'events' => $event->whereStatus('!=', 1)->paginate(3)]);
     }
 
     public function readScript()
     {
-        return view('reading');
+        $category = new Category();
+        $categories = $category->whereStatus(1)->get();
+        return view('reading', ['categories' => $categories]);
     }
     public function read(Request $request, $id)
     {
