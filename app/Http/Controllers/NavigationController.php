@@ -36,7 +36,7 @@ class NavigationController extends Controller
     public function readScript()
     {
         $category = new Category();
-        $categories = $category->whereStatus(1)->get();
+        $categories = $category->whereStatus(1)->with('karya')->get();
         return view('reading', ['categories' => $categories]);
     }
     public function read(Request $request, $id)
