@@ -30,4 +30,4 @@ Route::post('/unggah-karya', [ControllersKaryaController::class,'uploadKarya']);
 Route::get('/event', [NavigationController::class,'event']);
 Route::get('/baca-karya', [NavigationController::class,'readScript']);
 Route::get('/baca-karya/{id}', [NavigationController::class,'read']);
-Route::get('/{id}', [NavigationController::class,'announcement']);
+Route::get('/{id}', [NavigationController::class,'annouchement']);
