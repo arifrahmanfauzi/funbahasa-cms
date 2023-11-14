@@ -50,10 +50,10 @@
                                     <p>
                                         {{ $event->excerpt }}
                                     </p>
-                                    <button onclick="location.href='{{ $event->register_link }}'" title="daftar-event"
+                                    <button onclick="location.href='{{ $event->annouchement }}'" title="daftar-event"
                                         type="button"
-                                        class="bg-blue-500 rounded-md p-2 text-white font-title hover:bg-blue-700">Daftar
-                                        Yuk!</button>
+                                        class="bg-blue-500 rounded-md p-2 text-white font-title hover:bg-blue-700">Pengumuman
+                                        pemenang!</button>
                                 </div>
                             </a>
                         </div>
@@ -61,25 +61,6 @@
                 </div>
                 <div class="w-full py-6 flex justify-end items-center">
                     {{ $events->links() }}
-                    {{-- <!--Previous Button-->
-                    <button x-on:click="prevPage" :disabled="pageNumber == 0"
-                        :class="{ 'disabled cursor-not-allowed text-gray-600': pageNumber == 0 }">
-                        <svg class="arrow w-7 border-2 rounded-full p-1 cursor-pointer border-gray-500 hover:bg-gray-500 mr-2"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="border-gray-500">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                    </button>
-
-                    <!--Next Button-->
-                    <button x-on:click="nextPage" :disabled="pageNumber >= pageCount() - 1"
-                        :class="{ 'disabled cursor-not-allowed text-gray-600': pageNumber >= pageCount() - 1 }">
-                        <svg class="arrow w-7 border-2 rounded-full p-1 cursor-pointer border-gray-500 hover:bg-gray-500"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button> --}}
                 </div>
             </div>
         </section>
