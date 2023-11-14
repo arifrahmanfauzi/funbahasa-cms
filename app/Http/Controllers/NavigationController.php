@@ -30,7 +30,8 @@ class NavigationController extends Controller
     {
         $event = new Event();
         $eventActive = $event->whereStatus(1)->first();
-        return view('event', ['active_event' => $eventActive,'events' => $event->whereStatus('!=', 1)->paginate(3)]);
+        $admiko_data["fileInfo"] = Event::$admiko_file_info;
+        return view('event', ['active_event' => $eventActive,'admiko_data' => $admiko_data,'events' => $event->whereStatus('!=', 1)->paginate(3)]);
     }
 
     public function readScript()

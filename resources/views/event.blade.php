@@ -41,7 +41,7 @@
                             <a rel="noopener noreferrer" href="#"
                                 class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
                                 <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500"
-                                    src="{{ url('upload/' . $event->poster_image) }}">
+                                    src="{{ Storage::disk(config('admiko_config.filesystem'))->url($admiko_data['fileInfo']['poster_image']['original']['folder'] . $event->poster_image) }}">
                                 <div class="p-6 space-y-2">
                                     <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">
                                         {{ $event->event_name }}</h3>
