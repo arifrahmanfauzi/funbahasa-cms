@@ -88,7 +88,7 @@
                         <div class="grid grid-cols-2 xl:grid-cols-3 gap-7 sm:mr-0 md:mr-10 lg:mr-16 xl:mr-10">
                             <div
                                 class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                                <a href="{{ $event->register_link }}" target="_blank">
+                                <a href="{{ $event?->register_link }}" target="_blank">
                                     <div>
                                         <img src="{{ asset('assets/img/sec-3 pendaftaran.svg') }}"
                                             class="display block ml-3 w-7 xl:w-11 sm:w-8 md:w-8 lg:w-9 pb-3">
@@ -99,7 +99,7 @@
                             </div>
                             <div
                                 class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                                <a href="{{ $event->guide_link }}" target="_blank">
+                                <a href="{{ $event?->guide_link }}" target="_blank">
                                     <div>
                                         <img src="{{ asset('assets/img/sec-3 panduan.svg') }}"
                                             class="display block ml-3 w-7 xl:w-11 sm:w-8 md:w-8 lg:w-9 pb-3">
@@ -110,7 +110,7 @@
                             </div>
                             <div
                                 class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                                <a href="{{ $event->upload_link }}" target="_blank">
+                                <a href="{{ $event?->upload_link }}" target="_blank">
                                     <div>
                                         <img src="{{ asset('assets/img/sec-3 unggah.svg') }}"
                                             class="display block ml-3 h-10 xl:h-14 sm:h-11 md:h-11 lg:h-12 pb-3">
@@ -121,7 +121,7 @@
                             </div>
                             <div
                                 class="border shadow-lg bg-grey rounded-xl p-4 text-left col-span-2 transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
-                                <a href="{{ $event->poster_link }}" target="_blank">
+                                <a href="{{ $event?->poster_link }}" target="_blank">
                                     <div>
                                         <img src="{{ asset('assets/img/sec-3 poster.svg') }}"
                                             class="display block ml-3 w-7 xl:w-10 sm:w-8 md:w-8 lg:w-8 pb-3">
@@ -271,12 +271,12 @@
                     scroll-behavior: smooth;
                     list-style: none;
                     /* margin: 0;
-                        padding: 0; */
+                                padding: 0; */
                 }
 
                 .slide {
                     /* width: 100%;
-                        height: 100%; */
+                                height: 100%; */
                     flex: 1 0 100%;
                 }
 
@@ -354,14 +354,14 @@
                     }
 
                     /* .div-kategori{
-                            display: grid;
-                            grid-template-columns: repeat(2, minmax(0, 1fr));
-                            padding-top: 20px;
-                        }
-                        .button-kategori{
-                            display: grid;
-                            place-items: end;
-                        } */
+                                    display: grid;
+                                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                                    padding-top: 20px;
+                                }
+                                .button-kategori{
+                                    display: grid;
+                                    place-items: end;
+                                } */
                     .plus-icon {
                         left: 80%;
                         bottom: 80%;
@@ -527,8 +527,9 @@
                         </div>
                         <div class="rounded-xl p-4 text-left transform hover:scale-105 motion-reduce:transform-none"
                             style="background-color: #f0f0f0;">
-                            <a href="{{ url('/baca-karya/esai
-                                                        ') }}">
+                            <a
+                                href="{{ url('/baca-karya/esai
+                                                                                                                        ') }}">
                                 <div class="div-esai">
                                     <img src="{{ asset('assets/img/esai.svg') }}"
                                         class="display block ml-3 mt-3 h-11 xl:h-12 sm:h-10 md:h-10 lg:h-11 pb-3">

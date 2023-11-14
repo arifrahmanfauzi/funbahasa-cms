@@ -17,7 +17,7 @@
             @foreach ($categories as $category)
                 <div class="container mx-auto pt-28 xl:pt-36 lg:pt-32 px-10 xl:px-16 lg:px-16 md:px-10">
                     <div class="border-b xl:border-none lg:border-none md:border-none">
-                        <a href="kategori-puisi.html"
+                        <a href="{{ url('baca-karya/' . $category->category_name) }}"
                             class="font-title font-extrabold xl:pb-3 text-2xl xl:text-4xl lg:text-3xl text-gray-500 hover:text-blue-500">{{ Str::ucfirst($category->category_name) }}</a>
                         <p class="sub-category font-sans font-medium pb-3 text-sm text-gray-500 ">Temukan berbagai karya
                             sastra

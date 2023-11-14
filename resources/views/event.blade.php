@@ -18,8 +18,8 @@
                 </div>
                 <a rel="noopener noreferrer" href="#"
                     class="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-900">
-                    <img src="{{ url('upload/' . $active_event->poster_image) }}" alt=""
-                        class="object-scale-down w-full h-64 rounded sm:h-96 lg:col-span-7 ">
+                    <img src="{{ Storage::disk(config('admiko_config.filesystem'))->url($admiko_data['fileInfo']['poster_image']['original']['folder'] . $active_event->poster_image) }}"
+                        alt="" class="object-scale-down w-full h-64 rounded sm:h-96 lg:col-span-7 ">
                     <div class="p-6 lg:px-6 lg:py-0 space-y-2 lg:col-span-5">
                         <h3 class="text-3xl lg:text-4xl font-semibold group-hover:underline group-focus:underline">
                             {{ $active_event->event_name }}</h3>
