@@ -47,7 +47,7 @@ class NavigationController extends Controller
         $karya = Karya::where('category', $category->id)->latest('created_at')->paginate(4);
         return view('read-category', ['kategori' => $category, 'karyas' => $karya]);
     }
-    public function announcement(Request $request, $id)
+    public function annouchement(Request $request, $id)
     {
         $announcement = Announcement::where('slug', 'like', $id)->firstOrFail();
         return view('announcement', ['announcement' => $announcement]);

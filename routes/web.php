@@ -31,3 +31,4 @@ Route::get('/event', [NavigationController::class,'event']);
 Route::get('/baca-karya', [NavigationController::class,'readScript']);
 Route::get('/baca-karya/{id}', [NavigationController::class,'read']);
 Route::get('/{id}', [NavigationController::class,'annouchement']);
+Route::get('/karya/{id}', [ControllersKaryaController::class,'findKarya']);

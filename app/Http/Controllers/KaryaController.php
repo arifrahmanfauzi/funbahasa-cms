@@ -40,4 +40,11 @@ class KaryaController extends Controller
             throw new ErrorException($th->getMessage());
         }
     }
+    public function findKarya($id)
+    {
+        $karya = new Karya();
+        $result = $karya->whereTitle($id)->first();
+
+        return view('karya')->with('karya', $result);
+    }
 }
