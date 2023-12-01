@@ -26,7 +26,7 @@
                         </h2>
                     </div>
                     <div class="flex justify-center xl:justify-start lg:justify-start md:justify-start sm:justify-start">
-                        <button
+                        <a href="{{ url('tentang-kami') }}"
                             class="text-white font-bold px-4 py-2 mt-4 text-xs
                         xl:px-6 xl:py-3 xl:font-bold xl:text-sm xl:mt-6
                         sm:px-4 sm:py-2 sm:font-medium sm:text-xs sm:mt-4
@@ -34,7 +34,7 @@
                         lg:font-bold lg:text-sm lg:py-3
                         transition duration-200 ease-in transform bg-blue-500 rounded-full shadow-md max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0">
                             Tentang Kami
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -62,10 +62,10 @@
                         </p>
                     </div>
                     <div class="flex items-center place-content-center">
-                        <button
+                        <a href="https://instagram.com/funbahasa"
                             class="px-5 xl:px-10 sm:px-6 md:px-7 lg:px-8 py-3 xl:py-4 sm:py-2 md:py-3 lg:py-4 text-xs xl:text-lg sm:text-xs md:text-sm lg:text-base text-gray-500 transition duration-200 ease-in transform bg-yellow-600 rounded-full shadow-md  max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 mx-auto font-title font-extrabold">
                             Ikuti Kami
-                        </button>
+                        </a>
                     </div>
                     <div class="flex items-center place-content-center">
                         <picture>
@@ -271,12 +271,12 @@
                     scroll-behavior: smooth;
                     list-style: none;
                     /* margin: 0;
-                                padding: 0; */
+                                                    padding: 0; */
                 }
 
                 .slide {
                     /* width: 100%;
-                                height: 100%; */
+                                                    height: 100%; */
                     flex: 1 0 100%;
                 }
 
@@ -354,14 +354,14 @@
                     }
 
                     /* .div-kategori{
-                                    display: grid;
-                                    grid-template-columns: repeat(2, minmax(0, 1fr));
-                                    padding-top: 20px;
-                                }
-                                .button-kategori{
-                                    display: grid;
-                                    place-items: end;
-                                } */
+                                                        display: grid;
+                                                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                                                        padding-top: 20px;
+                                                    }
+                                                    .button-kategori{
+                                                        display: grid;
+                                                        place-items: end;
+                                                    } */
                     .plus-icon {
                         left: 80%;
                         bottom: 80%;
@@ -470,10 +470,10 @@
                             </div>
                             <div class="button-kategori">
                                 <a href="login.html">
-                                    <button
+                                    <a href="{{ url('baca-karya') }}"
                                         class="mt-4 xl:mt-4 lg:mt-4 md:mt-4 px-5 xl:px-6 sm:px-4 md:px-4 lg:px-5 py-1 xl:py-2 md:py-1 lg:py-2 text-xs text-white transition duration-200 ease-in transform bg-blue-500 rounded-full shadow-md  max-w-max hover:shadow-lg hover:translate-x-1 active:translate-y-0 mx-auto font-title font-bold">
                                         Lihat Semua <i class="bi bi-arrow-right-short" style="font-size: 20px;"></i>
-                                    </button>
+                                    </a>
                                 </a>
                             </div>
                         </div>
@@ -529,7 +529,7 @@
                             style="background-color: #f0f0f0;">
                             <a
                                 href="{{ url('/baca-karya/esai
-                                                                                                                        ') }}">
+                                                                                                                                                                                                                                                                                        ') }}">
                                 <div class="div-esai">
                                     <img src="{{ asset('assets/img/esai.svg') }}"
                                         class="display block ml-3 mt-3 h-11 xl:h-12 sm:h-10 md:h-10 lg:h-11 pb-3">
