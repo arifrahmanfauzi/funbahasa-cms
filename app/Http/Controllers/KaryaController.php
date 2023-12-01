@@ -43,7 +43,7 @@ class KaryaController extends Controller
     public function findKarya($id)
     {
         $karya = new Karya();
-        $result = $karya->whereTitle($id)->first();
+        $result = $karya->whereSlug($id)->first();
 
         return view('karya')->with('karya', $result);
     }

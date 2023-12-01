@@ -34,11 +34,12 @@
                     <div class="w-full sm:w-10/12 lg:w-5/12 px-4 mx-auto">
                         <h2 class="font-title font-extrabold text-4xl sm:text-5xl lg:text-5xl text-gray-500">Tentang Kami</h2>
                         <div class="bg-yellow-600 w-52 mt-2 rounded-xl left-36 h-2 "></div>
-                        <p class="font-sans text-base text-left pt-11 leading-normal w-full text-gray-500 sm:text-base lg:text-base">
-                            Funbahasa adalah platform media edukasi online berbasis komunitas yang memiliki visi
-                            mengakselerasi pemahaman tentang bahasa dan sastra kepada masyarakat luas dengan memberikan
-                            pengetahuan seputar bahasa dan sastra sekaligus mewadahi karya dan pikiran anak bangsa melalui
-                            event kebahasaan dan kesastraan yang diselenggarakan secara berkala.
+                        <h3 class="font-sans text-3xl font-bold text-gray-500 pt-5  lg:leading-normal">
+                            Akselerasi <i class="text-orange">Bahasa</i>  dan <i class="text-orange">Sastra</i> untuk Budi Pekerti Bangsa
+                        </h3>
+                        <p class="font-sans text-base text-left pt-5 leading-normal w-full text-gray-500 sm:text-base lg:text-base">
+                            Berdiri pada bulan Maret 2017, Fun Bahasa merupakan platform bahasa
+                            dan sastra untuk mengembangkan literasi di Indonesia.
                         </p>
                     </div>
                     <div class="w-full img-div sm:w-10/12 md:w-9/12 lg:w-5/12 xl:w-4/12 mx-auto py-8">
